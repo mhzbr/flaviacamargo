@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O que é Odontologia Integrativa? – Instituto Flávia Camargo</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favi.png" type="image/png" />
+
+  <style>
+    :root{
+      --blue:#1a469c;
+      --black:#444d53;
+      --white:#fff;
+      --gold:#d4af37;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Roboto",sans-serif;
+    }
+
+    body{
+      background:#000;
+      color:var(--white);
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    /* ================= HEADER ================= */
+
+    header{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1.2rem 2rem;
+      background:rgba(0,0,0,0.65);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(212,175,55,0.25);
+      z-index:999;
+    }
+
+    #nav_logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:1.4rem;
+      font-weight:500;
+      color:var(--white);
+    }
+
+    .logo-img{
+      width:40px;
+      height:40px;
+    }
+
+    .navbar ul{
+      display:flex;
+      gap:2rem;
+      list-style:none;
+    }
+
+    .navbar ul li a{
+      font-size:1.4rem;
+      color:var(--white);
+    }
+
+    .navbar ul li a:hover{
+      color:var(--gold);
+    }
+
+    .fa-bars{
+      display:none;
+      font-size:2.3rem;
+      color:var(--gold);
+      cursor:pointer;
+    }
+
+    @media(max-width:850px){
+      .navbar ul{
+        position:absolute;
+        top:70px;
+        right:-100%;
+        width:100%;
+        flex-direction:column;
+        background:#000;
+        padding:2rem 0;
+        border-top:1px solid rgba(212,175,55,0.25);
+        transition:0.3s;
+        text-align:center;
+      }
+      .navbar ul.active{
+        right:0;
+      }
+      .fa-bars{
+        display:block;
+      }
+    }
+
+    /* =============== HERO DO ARTIGO =============== */
+
+    .article-hero{
+      padding:11rem 1.5rem 3rem 1.5rem;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+
+    .article-container{
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .article-pill{
+      display:inline-block;
+      margin-bottom:1.5rem;
+      padding:0.4rem 1.2rem;
+      border-radius:50px;
+      border:1px solid rgba(212,175,55,0.6);
+      color:var(--gold);
+      font-size:1.1rem;
+      letter-spacing:0.15rem;
+      text-transform:uppercase;
+    }
+
+    .article-hero h1{
+      font-size:3rem;
+      margin-bottom:1rem;
+      color:var(--white);
+    }
+
+    .article-subtitle{
+      font-size:1.6rem;
+      color:#d2d2d2;
+      margin-bottom:1.5rem;
+    }
+
+    .article-meta{
+      font-size:1.3rem;
+      color:#bcbcbc;
+      display:flex;
+      flex-wrap:wrap;
+      gap:1.5rem;
+      align-items:center;
+    }
+
+    .article-meta i{
+      margin-right:.5rem;
+    }
+
+    /* =============== CONTEÚDO DO ARTIGO =============== */
+
+    .article-body{
+      padding:2.5rem 1.5rem 4rem 1.5rem;
+    }
+
+    .article-body .article-container{
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .article-body p{
+      font-size:1.55rem;
+      line-height:1.7;
+      color:#e3e3e3;
+      margin-bottom:1.6rem;
+    }
+
+    .article-body h2{
+      font-size:2.1rem;
+      margin:2.5rem 0 1rem 0;
+      color:var(--gold);
+    }
+
+    .article-body h3{
+      font-size:1.8rem;
+      margin:2rem 0 .8rem 0;
+      color:var(--blue);
+    }
+
+    .article-body ul{
+      margin:0 0 1.8rem 1.5rem;
+      list-style:disc;
+    }
+
+    .article-body ul li{
+      font-size:1.5rem;
+      color:#e5e5e5;
+      margin-bottom:.6rem;
+    }
+
+    .article-highlight{
+      border-left:3px solid var(--gold);
+      padding-left:1.2rem;
+      margin:2rem 0;
+      font-size:1.5rem;
+      color:#f0f0f0;
+    }
+
+    .article-note{
+      font-size:1.3rem;
+      color:#bcbcbc;
+      margin-top:1rem;
+    }
+
+    /* CTA final */
+
+    .article-cta{
+      margin-top:3rem;
+      padding:2rem 1.5rem;
+      border-radius:1rem;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(212,175,55,0.35);
+    }
+
+    .article-cta h3{
+      margin-top:0;
+      margin-bottom:.8rem;
+      color:var(--gold);
+    }
+
+    .article-cta p{
+      margin-bottom:1.2rem;
+    }
+
+    .article-cta .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:1rem;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:0.8rem 1.6rem;
+      border-radius:.6rem;
+      font-size:1.45rem;
+      font-weight:600;
+      cursor:pointer;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:#000;
+      border-color:var(--gold);
+    }
+
+    .btn-primary:hover{
+      background:transparent;
+      color:var(--gold);
+    }
+
+    .btn-secondary{
+      background:transparent;
+      color:var(--white);
+      border-color:rgba(255,255,255,0.4);
+    }
+
+    .btn-secondary:hover{
+      border-color:var(--gold);
+      color:var(--gold);
+    }
+
+    /* =============== FOOTER =============== */
+
+    .footer{
+      background:#050505;
+      padding:3rem 1.5rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:3rem;
+      justify-content:center;
+      margin-top:2rem;
+    }
+
+    .footer .box{
+      width:280px;
+    }
+
+    .footer .logo{
+      font-size:2rem;
+      color:var(--white);
+      margin-bottom:1rem;
+    }
+
+    .footer .logo span{
+      color:var(--gold);
+    }
+
+    .footer p{
+      font-size:1.4rem;
+      color:var(--white);
+    }
+
+    .footer a{
+      display:block;
+      color:var(--white);
+      font-size:1.4rem;
+      margin:0.3rem 0;
+    }
+
+    .footer a:hover{
+      color:var(--gold);
+    }
+
+    .credit{
+      width:100%;
+      text-align:center;
+      margin-top:2rem;
+      padding-top:1rem;
+      border-top:1px solid var(--white);
+      font-size:1.4rem;
+    }
+
+    .credit span{
+      color:var(--gold);
+    }
+
+    /* =============== RESPONSIVO =============== */
+
+    @media(max-width:768px){
+      .article-hero h1{
+        font-size:2.4rem;
+      }
+      .article-subtitle{
+        font-size:1.5rem;
+      }
+      .article-body p{
+        font-size:1.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a id="nav_logo" href="index.html">
+    <img src="favi.png" class="logo-img" alt="Instituto Flávia Camargo">
+    <span>INSTITUTO FLAVIA CAMARGO</span>
+  </a>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">Sobre</a></li>
+      <li><a href="index.html#doctor">Profissionais</a></li>
+      <li><a href="index.html#review">Depoimentos</a></li>
+      <li><a href="index.html#contact">Contato</a></li>
+      <li><a href="blog.html" style="color:var(--gold)">Blog</a></li>
+    </ul>
+  </nav>
+
+  <div class="fas fa-bars" id="menuBtn"></div>
+</header>
+
+<!-- HERO DO ARTIGO -->
+<section class="article-hero">
+  <div class="article-container">
+    <span class="article-pill">Odontologia integrativa</span>
+    <h1>O que é odontologia integrativa e por que ela muda a forma de cuidar da sua saúde?</h1>
+    <p class="article-subtitle">
+      Mais do que tratar um dente, a odontologia integrativa olha para você como um todo:
+      corpo, mente, hábitos e histórico. Entenda como essa visão amplia resultados
+      e traz mais segurança para cada decisão de tratamento.
+    </p>
+    <div class="article-meta">
+      <span><i class="fa-regular fa-calendar"></i> 11/2024</span>
+      <span><i class="fa-regular fa-clock"></i> Leitura de 7 minutos</span>
+    </div>
+  </div>
+</section>
+
+<!-- CORPO DO ARTIGO -->
+<section class="article-body">
+  <div class="article-container">
+
+    <p>
+      Quando falamos em odontologia, muita gente ainda pensa apenas em “dente com dor”, restauração,
+      canal ou limpeza. Mas a forma como a boca se relaciona com o restante do corpo é muito mais profunda
+      do que parece — e é justamente aí que entra a odontologia integrativa.
+    </p>
+
+    <p>
+      Em vez de enxergar apenas um dente isolado, a odontologia integrativa considera o contexto completo
+      da sua saúde: sistema imunológico, sono, alimentação, histórico emocional, presença de inflamações
+      silenciosas, metais pesados, entre muitos outros fatores.
+    </p>
+
+    <div class="article-highlight">
+      A proposta não é substituir a odontologia tradicional, mas ampliá-la: unir ciência, tecnologia
+      e uma visão global do paciente para que cada conduta faça mais sentido para você e para o seu corpo.
+    </div>
+
+    <h2>O que é, na prática, a odontologia integrativa?</h2>
+
+    <p>
+      A odontologia integrativa é uma abordagem que conecta a saúde bucal com a saúde sistêmica. Ela leva
+      em conta que alterações na boca podem influenciar órgãos, hormônios, inflamações e até o bem-estar
+      emocional — e o contrário também é verdadeiro.
+    </p>
+
+    <p>
+      Em vez de olhar apenas o “problema do momento”, o profissional integrativo investiga:
+    </p>
+
+    <ul>
+      <li>se existem focos inflamatórios silenciosos (como cavitações ou infecções crônicas);</li>
+      <li>se materiais presentes na boca podem estar sobrecarregando o organismo;</li>
+      <li>como estão os hábitos de sono, alimentação e estresse;</li>
+      <li>se existe relação entre sintomas que você sente no corpo e condições da cavidade oral.</li>
+    </ul>
+
+    <p>
+      Isso gera planos de tratamento mais completos, que conversam com outros profissionais da saúde
+      quando necessário e respeitam o tempo e a individualidade de cada pessoa.
+    </p>
+
+    <h2>Por que olhar “além do dente” faz tanta diferença?</h2>
+
+    <p>
+      A boca é um ponto de conexão direta com o restante do organismo. Infecções crônicas, inflamações
+      persistentes ou substâncias tóxicas presentes ali podem impactar desde a energia do dia a dia
+      até o equilíbrio de sistemas inteiros, como o cardiovascular, imunológico e nervoso.
+    </p>
+
+    <p>
+      Quando esse olhar mais amplo é ignorado, o paciente até pode “resolver” um sintoma pontual
+      — mas muitas vezes continua com desconfortos, cansaço, inflamações recorrentes ou problemas
+      que voltam com o tempo.
+    </p>
+
+    <p>
+      Ao integrar a odontologia com a visão sistêmica, é possível:
+    </p>
+
+    <ul>
+      <li>reduzir a chance de tratamentos “remendos” que não consideram a causa raiz;</li>
+      <li>alinhar decisões com exames, histórico e outros diagnósticos que você já possui;</li>
+      <li>encarar a saúde como um processo de longo prazo, e não só “apagar incêndios”.</li>
+    </ul>
+
+    <h2>Como é uma consulta em odontologia integrativa?</h2>
+
+    <p>
+      A primeira consulta costuma ser mais detalhada do que o atendimento odontológico tradicional.
+      O objetivo é ouvir a sua história com calma e entender o que está por trás das queixas principais.
+    </p>
+
+    <h3>1. Escuta e histórico completo</h3>
+    <p>
+      Você é convidado(a) a compartilhar não só o que sente na boca, mas também:
+    </p>
+    <ul>
+      <li>como está seu sono, seu nível de estresse e sua energia;</li>
+      <li>diagnósticos médicos prévios, exames laboratoriais relevantes;</li>
+      <li>medicações em uso, sintomas recorrentes e cirurgias anteriores;</li>
+      <li>hábitos de alimentação, rotina de trabalho e qualidade de vida.</li>
+    </ul>
+
+    <h3>2. Avaliação clínica minuciosa</h3>
+    <p>
+      Aqui entra a parte técnica da odontologia que você já conhece — mas com um olhar mais atento
+      para detalhes que muitas vezes passam despercebidos:
+    </p>
+    <ul>
+      <li>focos de inflamação crônica;</li>
+      <li>desconfortos que você já “se acostumou” a sentir;</li>
+      <li>avaliação de materiais presentes na boca (como amálgamas) quando indicado;</li>
+      <li>relação de dores de cabeça, pescoço e postura com a região da boca e da mordida.</li>
+    </ul>
+
+    <h3>3. Planejamento integrado</h3>
+    <p>
+      Depois disso, o plano de cuidado é construído de forma conjunta: você entende o porquê de cada
+      passo, quais são as prioridades e onde, eventualmente, será importante integrar outros profissionais
+      (como médicos, nutricionistas, terapeutas, entre outros).
+    </p>
+
+    <h2>Para quem essa abordagem faz mais sentido?</h2>
+
+    <p>
+      Qualquer pessoa pode se beneficiar da odontologia integrativa, mas ela costuma ser especialmente
+      valiosa para quem:
+    </p>
+
+    <ul>
+      <li>já tentou vários tratamentos e sente que “falta algo” na abordagem;</li>
+      <li>tem histórico de inflamações crônicas, doenças autoimunes ou fadiga persistente;</li>
+      <li>convive com medos ou traumas em relação ao consultório e precisa de um cuidado mais acolhedor;</li>
+      <li>busca se cuidar de maneira preventiva e quer entender melhor o próprio corpo.</li>
+    </ul>
+
+    <p>
+      Mais do que um rótulo, a odontologia integrativa é uma forma de enxergar você de forma
+      completa, respeitando a sua história, suas crenças e o momento de vida em que está.
+    </p>
+
+    <div class="article-note">
+      Este conteúdo tem caráter informativo e não substitui uma avaliação individualizada.  
+      Cada caso é único e deve ser analisado por um profissional habilitado.
+    </div>
+
+    <div class="article-cta">
+      <h3>Quer saber se a odontologia integrativa faz sentido para o seu caso?</h3>
+      <p>
+        Se você sente que chegou a hora de cuidar da sua saúde de um jeito mais profundo,
+        humano e conectado à sua realidade, o Instituto Flávia Camargo está preparado
+        para caminhar ao seu lado nesse processo.
+      </p>
+      <div class="cta-actions">
+        <a href="https://api.whatsapp.com/send?phone=554491086688" class="btn btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Falar com a equipe
+        </a>
+        <a href="index.html#contact" class="btn btn-secondary">
+          Voltar ao site
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="footer">
+  <div class="box">
+    <h2 class="logo"><span>Nossa</span> Localização</h2>
+    <p>
+      Um espaço pensado para acolher você com conforto, segurança e tecnologia.<br><br>
+      Praça Manoel Ribas, 326 - sala 02 - Zona 4, Maringá - PR, 87014-120
+      <a href="https://maps.app.goo.gl/2LRgvehHVcyr6rG49"><br>VISITE AGORA</a>
+    </p>
+  </div>
+
+  <div class="box">
+    <h2 class="logo"><span>Nossas</span> mídias</h2>
+    <a href="https://www.facebook.com/draflaviacamargo">facebook</a>
+    <a href="https://api.whatsapp.com/send?phone=554491086688">WhatsApp</a>
+    <a href="https://www.instagram.com/draflaviacamargo/">instagram</a>
+  </div>
+
+  <div class="box">
+    <h2 class="logo"><span>L</span>inks</h2>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#about">Sobre</a>
+    <a href="index.html#doctor">Profissionais</a>
+    <a href="index.html#review">Depoimentos</a>
+    <a href="index.html#contact">Contato</a>
+    <a href="blog.html">Blog</a>
+  </div>
+
+  <h1 class="credit">created by <span>Mhz Company</span> todos os direitos reservados.</h1>
+</section>
+
+<script>
+  document.getElementById("menuBtn").onclick = () => {
+    document.querySelector(".navbar ul").classList.toggle("active");
+  };
+</script>
+
+</body>
+</html>
